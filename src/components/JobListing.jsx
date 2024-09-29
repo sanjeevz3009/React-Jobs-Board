@@ -6,6 +6,10 @@ import { FaMapMarker } from 'react-icons/fa';
 const JobListing = ({ job }) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
+  if (!job) {
+    return <div>Job details are not available.</div>;
+  }
+
   let description = job.description;
 
   if (!isExpanded) {
